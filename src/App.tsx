@@ -1,27 +1,27 @@
-import { Header } from './components/Header';
-import { HeroSection } from './components/HeroSection';
-import { CarrerasSection } from './components/CarrerasSection';
-import { ModeloDualSection } from './components/ModeloDualSection';
-import { AdmisionesSection } from './components/AdmisionesSection';
-import { StuttgartSection } from './components/StuttgartSection';
-import { RecorridoFuturoSection } from './components/RecorridoFuturoSection';
-import { FUSoftSection } from './components/FUSoftSection';
-import { Footer } from './components/Footer';
+// src/App.tsx
 
-export default function App() {
+import React from 'react';
+import CampusVirtualHero from './components/HeroSection';
+import CarrerasSection from './components/CarrerasSection';
+import ModeloDualSection from './components/ModeloDualSection';
+// Importa las otras secciones aquí si es necesario
+// import Footer from './components/Footer';
+import './App.css'; // Estilos generales de la app
+
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
+    <div className="App">
+      {/* El Header podría ir aquí si quieres que sea fijo en toda la página */}
       <main>
-        <HeroSection />
+        <CampusVirtualHero />
         <CarrerasSection />
         <ModeloDualSection />
-        <AdmisionesSection />
-        <StuttgartSection />
-        <RecorridoFuturoSection />
-        <FUSoftSection />
+        {/* Aquí puedes agregar el resto de tus secciones */}
+        {/* ...otras secciones */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
-}
+};
+
+export default App;
