@@ -1,153 +1,223 @@
-import { Card, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { Brain, MessageCircle, Rocket, Settings, BarChart3, Image as ImageIcon } from 'lucide-react';
+import React from 'react';
+import { Brain, MessageCircle, Rocket, BarChart3, Settings, Image as ImageIcon } from 'lucide-react';
+import './StuttgartSection.css';
 
-const funcionalidades = [
-  {
-    icon: Brain,
-    titulo: 'Asistencia Inteligente',
-    descripcion: 'Disponible 24/7 para resolver tus dudas al instante.',
-    color: 'from-pink-500 to-rose-500'
-  },
-  {
-    icon: MessageCircle,
-    titulo: 'Guía Personalizada',
-    descripcion: 'Recibe orientación adaptada a tu perfil y programa académico.',
-    color: 'from-orange-500 to-amber-500'
-  },
-  {
-    icon: Rocket,
-    titulo: 'Navegación Intuitiva',
-    descripcion: 'Explora fácilmente cada rincón del campus sin perderte.',
-    color: 'from-red-500 to-pink-500'
-  }
-];
+export const StuttgartSection = () => {
 
-export function StuttgartSection() {
+  const funcionalidades = [
+    {
+      icon: Brain,
+      titulo: 'Asistencia Inteligente',
+      descripcion: 'Disponible 24/7 para resolver tus dudas al instante.',
+      color: 'pink'
+    },
+    {
+      icon: MessageCircle,
+      titulo: 'Guía Personalizada',
+      descripcion: 'Recibe orientación adaptada a tu perfil y programa académico.',
+      color: 'orange'
+    },
+    {
+      icon: Rocket,
+      titulo: 'Navegación Intuitiva',
+      descripcion: 'Explora fácilmente cada rincón del campus sin perderte.',
+      color: 'red'
+    }
+  ];
+
+  const capacidades = [
+    {
+      icon: MessageCircle,
+      titulo: 'Chat Inteligente',
+      descripcion: 'Conversaciones naturales con comprensión contextual avanzada',
+      color: 'green'
+    },
+    {
+      icon: Brain,
+      titulo: 'Aprendizaje Adaptativo',
+      descripcion: 'Se adapta a tu estilo de aprendizaje y progreso académico',
+      color: 'blue'
+    },
+    {
+      icon: Rocket,
+      titulo: 'Recomendaciones Inteligentes',
+      descripcion: 'Sugerencias personalizadas para optimizar tu experiencia',
+      color: 'purple'
+    }
+  ];
+
   return (
-    <section id="stuttgart" className="py-24 bg-gradient-to-b from-muted/20 to-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-900/50 dark:to-blue-900/50 text-green-800 dark:text-green-200 border-0">
-            Tu Compañero Digital
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Conoce a <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">Stuttgart</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Tu asistente virtual inteligente que te acompañará durante toda tu experiencia educativa en nuestro Mega Campus del Futuro.
-          </p>
-        </div>
-
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          {/* Stuttgart Character */}
-          <div className="relative">
-            <div className="relative p-8 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 rounded-2xl">
-              <div className="w-full h-64 max-w-md mx-auto bg-white/20 rounded-xl flex items-center justify-center">
-                <div className="text-white text-center">
-                  <div className="text-6xl mb-4">🤖</div>
-                  <div className="text-lg font-semibold">Stuttgart AI</div>
-                  <div className="text-sm opacity-80">Asistente Virtual</div>
-                </div>
+    <section className="stuttgart-section">
+      {/* Header */}
+      <header className="stuttgart-header">
+        <div className="stuttgart-container">
+          <div className="header-content">
+            {/* Logo */}
+            <div className="logo-container">
+              <div className="logo-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
               </div>
-              {/* Floating UI elements */}
-              <div className="absolute top-4 left-4 p-2 bg-white/20 backdrop-blur-md rounded-lg">
-                <Settings className="h-5 w-5 text-white" />
-              </div>
-              <div className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-md rounded-lg">
-                <BarChart3 className="h-5 w-5 text-white" />
-              </div>
-              <div className="absolute bottom-4 left-4 p-2 bg-white/20 backdrop-blur-md rounded-lg">
-                <ImageIcon className="h-5 w-5 text-white" />
+              <div className="logo-text">
+                <h1>CampusVirtual</h1>
+                <p>Modelo Dual Alemán</p>
               </div>
             </div>
-            
-            {/* Animated dots */}
-            <div className="absolute -top-4 -left-4 w-8 h-8 bg-green-400 rounded-full animate-pulse"></div>
-            <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-blue-400 rounded-full animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 -right-6 w-4 h-4 bg-purple-400 rounded-full animate-pulse delay-500"></div>
+
+            {/* Navigation */}
+            <nav className="nav-menu">
+              <a href="#inicio" className="nav-link">Inicio</a>
+              <a href="#carreras" className="nav-link">Carreras</a>
+              <a href="#modelo-dual" className="nav-link">Modelo Dual</a>
+              <a href="#admisiones" className="nav-link">Admisiones</a>
+            </nav>
+
+            {/* CTA Button */}
+            <button className="header-cta">
+              Portal Estudiante
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="stuttgart-main">
+        <div className="stuttgart-container">
+          {/* Section Header */}
+          <div className="stuttgart-section-header">
+            <div className="stuttgart-badge">
+              Tu Compañero Digital
+            </div>
+            <h2 className="stuttgart-title">
+              Conoce a <span className="gradient-text">Stuttgart</span>
+            </h2>
+            <p className="stuttgart-description">
+              Tu asistente virtual inteligente que te acompañará durante toda tu experiencia educativa en nuestro Mega Campus del Futuro.
+            </p>
           </div>
 
-          {/* Description and Features */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold">
-                "¡Hola! Soy tu guía en el Mega Campus del Futuro. Estoy aquí para potenciar tu aventura educativa y asegurar que aproveches al máximo cada recurso. ¡Empecemos!"
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Stuttgart es más que un asistente virtual; es tu compañero inteligente que evoluciona contigo. 
-                Diseñado con la última tecnología de IA, comprende tus necesidades académicas y te guía hacia el éxito.
-              </p>
+          {/* Main Content Grid */}
+          <div className="stuttgart-content-grid">
+            {/* Stuttgart Character */}
+            <div className="stuttgart-character-section">
+              <div className="stuttgart-avatar-container">
+                {/* Floating UI elements */}
+                <div className="floating-ui floating-ui-1">
+                  <div className="floating-icon">
+                    <Settings />
+                  </div>
+                </div>
+                <div className="floating-ui floating-ui-2">
+                  <div className="floating-icon">
+                    <BarChart3 />
+                  </div>
+                </div>
+                <div className="floating-ui floating-ui-3">
+                  <div className="floating-icon">
+                    <ImageIcon />
+                  </div>
+                </div>
+
+                {/* Main Avatar Card */}
+                <div className="stuttgart-avatar-card">
+                  <div className="avatar-header">
+                    <div className="avatar-icons">
+                      <div className="avatar-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                      </div>
+                      <div className="avatar-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="avatar-chart">
+                      <BarChart3 />
+                    </div>
+                  </div>
+
+                  <div className="avatar-main">
+                    <div className="avatar-image">
+                      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0Qjc2ODgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzQjgyRjYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNncmFkKSIgcng9IjEwIi8+PHRleHQgeD0iNTAiIHk9IjQ1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn6SWPC90ZXh0Pjx0ZXh0IHg9IjUwIiB5PSI2NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEwIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U3R1dHRnYXJ0PC90ZXh0Pjx0ZXh0IHg9IjUwIiB5PSI3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjgiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkFJIEFzc2lzdGVudDwvdGV4dD48L3N2Zz4=" alt="Stuttgart - Asistente Virtual" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Animated dots */}
+                <div className="floating-dot floating-dot-1"></div>
+                <div className="floating-dot floating-dot-2"></div>
+                <div className="floating-dot floating-dot-3"></div>
+              </div>
             </div>
 
-            {/* Features */}
-            <div className="space-y-4">
-              {funcionalidades.map((func, index) => {
-                const IconComponent = func.icon;
-                return (
-                  <div key={index} className="flex items-start space-x-4 p-4 rounded-xl bg-gradient-to-r from-muted/50 to-background border border-border/50">
-                    <div className={`p-2 rounded-lg bg-gradient-to-br ${func.color} text-white flex-shrink-0`}>
-                      <IconComponent className="h-5 w-5" />
+            {/* Description and Features */}
+            <div className="stuttgart-info-section">
+              <div className="stuttgart-quote">
+                <h3>
+                  "¡Hola! Soy tu guía en el Mega Campus del Futuro. 
+                  Estoy aquí para potenciar tu aventura educativa y 
+                  asegurar que aproveches al máximo cada recurso. 
+                  ¡Empecemos!"
+                </h3>
+                <p>
+                  Stuttgart es más que un asistente virtual; es tu compañero inteligente que 
+                  evoluciona contigo. Diseñado con la última tecnología de IA, comprende tus 
+                  necesidades académicas y te guía hacia el éxito.
+                </p>
+              </div>
+
+              {/* Features */}
+              <div className="stuttgart-features">
+                {funcionalidades.map((func, index) => {
+                  const IconComponent = func.icon;
+                  return (
+                    <div key={index} className="feature-item">
+                      <div className={`feature-icon ${func.color}`}>
+                        <IconComponent />
+                      </div>
+                      <div className="feature-content">
+                        <h4>{func.titulo}</h4>
+                        <p>{func.descripcion}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">{func.titulo}</h4>
-                      <p className="text-sm text-muted-foreground">{func.descripcion}</p>
+                  );
+                })}
+              </div>
+
+              {/* CTA Button */}
+              <button className="stuttgart-cta">
+                <MessageCircle />
+                Charlar con Stuttgart
+              </button>
+            </div>
+          </div>
+
+          {/* Capabilities Grid */}
+          <div className="capabilities-section">
+            <div className="capabilities-grid">
+              {capacidades.map((cap, index) => {
+                const IconComponent = cap.icon;
+                return (
+                  <div key={index} className="capability-card">
+                    <div className="capability-header">
+                      <div className={`capability-icon ${cap.color}`}>
+                        <IconComponent />
+                      </div>
+                    </div>
+                    <div className="capability-content">
+                      <h4>{cap.titulo}</h4>
+                      <p>{cap.descripcion}</p>
                     </div>
                   </div>
                 );
               })}
             </div>
-
-            {/* CTA Button */}
-            <Button className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white border-0 px-8 py-3 group">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Charlar con Stuttgart
-            </Button>
           </div>
         </div>
-
-        {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="border-2 border-border/50 hover:border-green-300 transition-all duration-300 group">
-            <CardHeader className="text-center">
-              <div className="mx-auto p-4 bg-gradient-to-br from-green-500 to-emerald-500 text-white rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                <MessageCircle className="h-6 w-6" />
-              </div>
-              <CardTitle>Chat Inteligente</CardTitle>
-              <CardDescription>
-                Conversaciones naturales con comprensión contextual avanzada
-              </CardDescription>
-            </CardHeader>
-          </Card>
-
-          <Card className="border-2 border-border/50 hover:border-blue-300 transition-all duration-300 group">
-            <CardHeader className="text-center">
-              <div className="mx-auto p-4 bg-gradient-to-br from-blue-500 to-cyan-500 text-white rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Brain className="h-6 w-6" />
-              </div>
-              <CardTitle>Aprendizaje Adaptativo</CardTitle>
-              <CardDescription>
-                Se adapta a tu estilo de aprendizaje y progreso académico
-              </CardDescription>
-            </CardHeader>
-          </Card>
-
-          <Card className="border-2 border-border/50 hover:border-purple-300 transition-all duration-300 group">
-            <CardHeader className="text-center">
-              <div className="mx-auto p-4 bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="h-6 w-6" />
-              </div>
-              <CardTitle>Recomendaciones Inteligentes</CardTitle>
-              <CardDescription>
-                Sugerencias personalizadas para optimizar tu experiencia
-              </CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
-      </div>
+      </main>
     </section>
   );
-}
+};

@@ -4,6 +4,9 @@ import React from 'react';
 import CampusVirtualHero from './components/HeroSection';
 import CarrerasSection from './components/CarrerasSection';
 import ModeloDualSection from './components/ModeloDualSection';
+import AdmisionesSection from './components/AdmisionesSection';
+import { RecorridoFuturoSection } from './components/RecorridoFuturoSection';
+import { StuttgartSection } from './components/StuttgartSection';
 // Importa las otras secciones aquí si es necesario
 // import Footer from './components/Footer';
 import './App.css'; // Estilos generales de la app
@@ -16,6 +19,9 @@ const App: React.FC = () => {
         <CampusVirtualHero />
         <CarrerasSection />
         <ModeloDualSection />
+        <StuttgartSection />
+        <RecorridoFuturoSection />
+        <AdmisionesSection />
         {/* Aquí puedes agregar el resto de tus secciones */}
         {/* ...otras secciones */}
       </main>

@@ -1,0 +1,506 @@
+/* AdmisionesSection.css - Estilos para el componente AdmisionesSection */
+
+/* Contenedor principal */
+.admisiones-section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: linear-gradient(to bottom, transparent, rgba(245, 245, 245, 0.2));
+}
+
+.admisiones-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Header de la sección */
+.admisiones-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.admisiones-badge {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #dbeafe, #e9d5ff);
+  color: #1e40af;
+  border: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.admisiones-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.admisiones-title .gradient-text {
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admisiones-description {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+}
+
+/* Sección de pasos del proceso */
+.pasos-section {
+  margin-bottom: 5rem;
+}
+
+.pasos-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #111827;
+}
+
+.pasos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Tarjeta de paso */
+.paso-card {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border-radius: 1rem;
+  border: 2px solid rgba(229, 231, 235, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.paso-card:hover {
+  border-color: rgba(147, 51, 234, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(147, 51, 234, 0.1);
+}
+
+.paso-card-content {
+  padding: 2rem;
+}
+
+/* Badge del número de paso */
+.paso-number-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.paso-number-badge.blue {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.paso-number-badge.green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.paso-number-badge.purple {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.paso-number-badge.orange {
+  background: linear-gradient(135deg, #f97316, #ef4444);
+}
+
+/* Header de la tarjeta */
+.paso-header {
+  margin-bottom: 2rem;
+}
+
+.paso-icon {
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  color: white;
+  width: fit-content;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.paso-card:hover .paso-icon {
+  transform: scale(1.1);
+}
+
+.paso-icon svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.paso-icon.blue {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+}
+
+.paso-icon.green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.paso-icon.purple {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.paso-icon.orange {
+  background: linear-gradient(135deg, #f97316, #ef4444);
+}
+
+.paso-titulo {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.paso-descripcion {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+/* Tiempo estimado */
+.paso-tiempo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.paso-tiempo svg {
+  height: 1rem;
+  width: 1rem;
+  color: #6b7280;
+}
+
+.paso-tiempo-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Acciones del paso */
+.paso-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.paso-accion {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paso-accion svg {
+  height: 1rem;
+  width: 1rem;
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.paso-accion-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Sección de requisitos y cronograma */
+.requisitos-cronograma {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Tarjetas de requisitos y cronograma */
+.info-card {
+  background: white;
+  border-radius: 1rem;
+  border: 2px solid rgba(229, 231, 235, 0.5);
+  padding: 2rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.info-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.info-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-card-title svg {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.info-card-title svg.blue {
+  color: #2563eb;
+}
+
+.info-card-title svg.purple {
+  color: #7c3aed;
+}
+
+.info-card-description {
+  color: #6b7280;
+}
+
+/* Lista de requisitos */
+.requisitos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.requisito-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.requisito-item svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #10b981;
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.requisito-text {
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+/* Cronograma */
+.cronograma-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cronograma-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid;
+}
+
+.cronograma-item.blue {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.cronograma-item.green {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.cronograma-item.purple {
+  background: #faf5ff;
+  border-color: #ddd6fe;
+}
+
+.cronograma-item.orange {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.cronograma-info h4 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #111827;
+}
+
+.cronograma-info p {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.cronograma-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cronograma-badge.blue {
+  background: #2563eb;
+}
+
+.cronograma-badge.green {
+  background: #059669;
+}
+
+.cronograma-badge.purple {
+  background: #7c3aed;
+}
+
+.cronograma-badge.orange {
+  background: #ea580c;
+}
+
+/* CTA final */
+.admisiones-cta {
+  text-align: center;
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+}
+
+.admisiones-cta-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.admisiones-cta-description {
+  color: #bfdbfe;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admisiones-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-button-primary {
+  background: white;
+  color: #2563eb;
+  border: 0;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-button-primary:hover {
+  background: #eff6ff;
+}
+
+.cta-button-primary svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.cta-button-primary:hover svg {
+  transform: translateX(0.25rem);
+}
+
+.cta-button-secondary {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  background: transparent;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Media queries responsivas */
+@media (min-width: 640px) {
+  .admisiones-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .admisiones-title {
+    font-size: 3.75rem;
+  }
+  
+  .admisiones-cta-title {
+    font-size: 1.875rem;
+  }
+  
+  .admisiones-cta-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .pasos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .admisiones-title {
+    font-size: 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .admisiones-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .pasos-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .requisitos-cronograma {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .admisiones-cta {
+    padding: 3rem;
+  }
+  
+  .admisiones-cta-title {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .admisiones-title {
+    font-size: 5rem;
+  }
+  
+  .admisiones-cta-title {
+    font-size: 2.25rem;
+  }
+}
+
