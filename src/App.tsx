@@ -7,8 +7,8 @@ import ModeloDualSection from './components/ModeloDualSection';
 import AdmisionesSection from './components/AdmisionesSection';
 import { RecorridoFuturoSection } from './components/RecorridoFuturoSection';
 import { StuttgartSection } from './components/StuttgartSection';
-// Importa las otras secciones aquí si es necesario
-// import Footer from './components/Footer';
+import { FUSoftSection } from './components/FUSoftSection';
+import { Footer } from './components/Footer';
 import './App.css'; // Estilos generales de la app
 
 const App: React.FC = () => {
@@ -20,12 +20,13 @@ const App: React.FC = () => {
         <CarrerasSection />
         <ModeloDualSection />
         <StuttgartSection />
+        <FUSoftSection />
         <RecorridoFuturoSection />
         <AdmisionesSection />
         {/* Aquí puedes agregar el resto de tus secciones */}
         {/* ...otras secciones */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

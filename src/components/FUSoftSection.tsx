@@ -1,7 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
+import React from 'react';
 import { Code, Zap, Shield, Users, Award, ArrowRight, CheckCircle, Rocket, Globe, Star } from 'lucide-react';
+import './FUSoftSection.css';
 
 const serviciosFUSoft = [
   {
@@ -37,161 +36,216 @@ const logros = [
   { numero: '15+', label: 'Años de Experiencia', descripcion: 'En desarrollo de software' }
 ];
 
+const tecnologias = [
+  { name: 'React', category: 'Frontend', icon: 'react' },
+  { name: 'Node.js', category: 'Backend', icon: 'node' },
+  { name: 'MongoDB', category: 'Database', icon: 'mongodb' },
+  { name: 'AWS', category: 'Cloud', icon: 'aws' },
+  { name: 'Docker', category: 'DevOps', icon: 'docker' },
+  { name: 'Kubernetes', category: 'DevOps', icon: 'kubernetes' },
+  { name: 'GraphQL', category: 'API', icon: 'graphql' },
+  { name: 'Redis', category: 'Cache', icon: 'redis' },
+  { name: 'WebRTC', category: 'Real-time', icon: 'webrtc' },
+  { name: 'Unity 3D', category: 'Gaming', icon: 'unity' },
+  { name: 'TensorFlow', category: 'AI/ML', icon: 'tensorflow' },
+  { name: 'Blockchain', category: 'Web3', icon: 'blockchain' },
+  { name: 'Python', category: 'Backend', icon: 'python' },
+  { name: 'JavaScript', category: 'Language', icon: 'javascript' },
+  { name: 'TypeScript', category: 'Language', icon: 'typescript' },
+  { name: 'Angular', category: 'Frontend', icon: 'angular' },
+  { name: 'Vue.js', category: 'Frontend', icon: 'vue' },
+  { name: 'PHP', category: 'Backend', icon: 'php' },
+  { name: 'Laravel', category: 'Framework', icon: 'laravel' },
+  { name: 'Django', category: 'Framework', icon: 'django' }
+];
+
+// Duplicamos las tecnologías para el efecto de carrusel infinito
+const tecnologiasInfinitas = [...tecnologias, ...tecnologias];
+
 export function FUSoftSection() {
   return (
-    <section id="fusoft-alianza" className="py-24 bg-gradient-to-b from-muted/20 to-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="fusoft-section">
+      {/* Elementos decorativos de fondo */}
+      <div className="fusoft-background">
+        <div className="fusoft-gradient-1"></div>
+        <div className="fusoft-gradient-2"></div>
+      </div>
+
+      <div className="fusoft-container">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <Badge className="mb-4 bg-gradient-to-r from-blue-100 to-green-100 dark:from-blue-900/50 dark:to-green-900/50 text-blue-800 dark:text-blue-200 border-0">
+        <div className="fusoft-header">
+          <div className="fusoft-badge">
             Alianza Estratégica
-          </Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Desarrollado por <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">FUSoft</span>
+          </div>
+          <h2 className="fusoft-title">
+            Desarrollado por <span className="gradient-text">FUSoft</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Nuestra fábrica de software líder en innovación tecnológica, responsable de crear la experiencia educativa virtual más avanzada del continente.
+          <p className="fusoft-description">
+            Nuestra fábrica de software líder en innovación tecnológica, responsable de crear la 
+            experiencia educativa virtual más avanzada del continente.
           </p>
         </div>
 
         {/* Partnership Overview */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="fusoft-company-grid">
           {/* Company Info */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="p-4 bg-gradient-to-br from-blue-500 to-green-500 text-white rounded-xl">
-                <Rocket className="h-8 w-8" />
+          <div className="company-info">
+            <div className="company-logo">
+              <div className="company-icon">
+                <Rocket />
               </div>
-              <div>
-                <h3 className="text-2xl font-bold">FUSoft Technologies</h3>
-                <p className="text-muted-foreground">Fábrica de Software de Vanguardia</p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <Star className="h-5 w-5 text-yellow-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Líder en Innovación EdTech</p>
-                  <p className="text-sm text-muted-foreground">Especialistas en soluciones educativas digitales con más de 15 años de experiencia.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Globe className="h-5 w-5 text-blue-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Presencia Internacional</p>
-                  <p className="text-sm text-muted-foreground">Oficinas en 12 países y proyectos desplegados en más de 50 naciones.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Award className="h-5 w-5 text-purple-500 mt-1 flex-shrink-0" />
-                <div>
-                  <p className="font-semibold">Certificaciones Premium</p>
-                  <p className="text-sm text-muted-foreground">ISO 27001, SOC 2, GDPR compliant y certificaciones de seguridad de nivel empresarial.</p>
-                </div>
+              <div className="company-logo-text">
+                <h3>FUSoft Technologies</h3>
+                <p>Fábrica de Software de Vanguardia</p>
               </div>
             </div>
 
-            <Button className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white border-0 px-8 py-3 group">
-              <Globe className="mr-2 h-5 w-5" />
+            <div className="company-features">
+              <div className="feature-item">
+                <div className="feature-icon star">
+                  <Star />
+                </div>
+                <div className="feature-content">
+                  <h4>Líder en Innovación EdTech</h4>
+                  <p>Especialistas en soluciones educativas digitales con más de 15 años de experiencia.</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon globe">
+                  <Globe />
+                </div>
+                <div className="feature-content">
+                  <h4>Presencia Internacional</h4>
+                  <p>Oficinas en 12 países y proyectos desplegados en más de 50 naciones.</p>
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon award">
+                  <Award />
+                </div>
+                <div className="feature-content">
+                  <h4>Certificaciones Premium</h4>
+                  <p>ISO 27001, SOC 2, GDPR compliant y certificaciones de seguridad de nivel empresarial.</p>
+                </div>
+              </div>
+            </div>
+
+            <button className="company-cta">
+              <Globe />
               Visitar FUSoft.com
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </Button>
+              <ArrowRight className="arrow-icon" />
+            </button>
           </div>
 
           {/* Achievement Stats */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-center mb-8">Logros y Reconocimientos</h3>
-            <div className="grid grid-cols-2 gap-6">
+          <div className="achievements-section">
+            <h3 className="achievements-title">Logros y Reconocimientos</h3>
+            <div className="achievements-grid">
               {logros.map((logro, index) => (
-                <Card key={index} className="text-center border-2 border-border/50 hover:border-primary/30 transition-all duration-300">
-                  <CardContent className="pt-6">
-                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent mb-2">
-                      {logro.numero}
-                    </div>
-                    <div className="font-semibold text-sm mb-1">{logro.label}</div>
-                    <div className="text-xs text-muted-foreground">{logro.descripcion}</div>
-                  </CardContent>
-                </Card>
+                <div key={index} className="achievement-card">
+                  <div className="achievement-number">
+                    {logro.numero}
+                  </div>
+                  <div className="achievement-label">{logro.label}</div>
+                  <div className="achievement-description">{logro.descripcion}</div>
+                </div>
               ))}
             </div>
           </div>
         </div>
 
         {/* Services Grid */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-center mb-12">Servicios Especializados</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="services-section">
+          <h3 className="services-title">Servicios Especializados</h3>
+          <div className="services-grid">
             {serviciosFUSoft.map((servicio, index) => {
               const IconComponent = servicio.icon;
+              const iconClasses = ['code', 'shield', 'zap', 'users'];
               return (
-                <Card key={index} className="text-center border-2 border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-lg group h-full">
-                  <CardHeader>
-                    <div className="mx-auto p-4 bg-gradient-to-br from-blue-500 to-green-500 text-white rounded-xl w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="h-6 w-6" />
+                <div key={index} className="service-card">
+                  <div className="service-header">
+                    <div className={`service-icon ${iconClasses[index]}`}>
+                      <IconComponent />
                     </div>
-                    <CardTitle className="text-lg">{servicio.titulo}</CardTitle>
-                    <CardDescription className="text-sm">{servicio.descripcion}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2">
-                      {servicio.detalles.map((detalle, idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" />
-                          <span className="text-xs text-muted-foreground">{detalle}</span>
+                    <h4 className="service-title">{servicio.titulo}</h4>
+                    <p className="service-description">{servicio.descripcion}</p>
+                  </div>
+                  <div className="service-details">
+                    {servicio.detalles.map((detalle, idx) => (
+                      <div key={idx} className="service-detail">
+                        <div className="service-detail-icon">
+                          <CheckCircle />
                         </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                        <span>{detalle}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               );
             })}
           </div>
         </div>
 
-        {/* Technology Stack */}
-        <div className="mb-20">
-          <h3 className="text-2xl font-bold text-center mb-12">Stack Tecnológico del Campus</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {['React', 'Node.js', 'MongoDB', 'AWS', 'Docker', 'Kubernetes', 'GraphQL', 'Redis', 'WebRTC', 'Unity 3D', 'TensorFlow', 'Blockchain'].map((tech, index) => (
-              <div key={index} className="p-4 bg-gradient-to-br from-muted/50 to-background border border-border/50 rounded-lg text-center hover:shadow-md transition-shadow duration-200">
-                <div className="font-semibold text-sm">{tech}</div>
-              </div>
-            ))}
+        {/* Technology Stack Carousel */}
+        <div className="tech-carousel-section">
+          <h3 className="tech-carousel-title">Stack Tecnológico del Campus</h3>
+          <p className="tech-carousel-subtitle">
+            Tecnologías de vanguardia que potencian nuestra plataforma educativa
+          </p>
+          <div className="tech-carousel-container">
+            <div className="tech-carousel-track">
+              {tecnologiasInfinitas.map((tech, index) => (
+                <div key={`${tech.name}-${index}`} className="tech-item">
+                  <div className={`tech-icon ${tech.icon}`}>
+                    {tech.name.charAt(0)}
+                  </div>
+                  <div className="tech-name">{tech.name}</div>
+                  <div className="tech-category">{tech.category}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Partnership Benefits */}
-        <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 lg:p-12 text-white">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">¿Por qué elegimos FUSoft?</h3>
-            <p className="text-blue-100 max-w-3xl mx-auto">
-              La alianza estratégica con FUSoft nos permite ofrecer la plataforma educativa más avanzada, 
-              segura y escalable del mercado, garantizando una experiencia excepcional para nuestros estudiantes.
-            </p>
-          </div>
+        <div className="benefits-section">
+          <div className="benefits-content">
+            <div className="benefits-header">
+              <h3 className="benefits-title">¿Por qué elegimos FUSoft?</h3>
+              <p className="benefits-description">
+                La alianza estratégica con FUSoft nos permite ofrecer la plataforma educativa más avanzada, 
+                segura y escalable del mercado, garantizando una experiencia excepcional para nuestros estudiantes.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="p-4 bg-white/10 rounded-xl w-fit mx-auto mb-4">
-                <Shield className="h-8 w-8" />
+            <div className="benefits-grid">
+              <div className="benefit-item">
+                <div className="benefit-icon">
+                  <Shield />
+                </div>
+                <h4 className="benefit-title">Seguridad Empresarial</h4>
+                <p className="benefit-description">
+                  Protección de datos con estándares militares y cumplimiento internacional.
+                </p>
               </div>
-              <h4 className="font-semibold mb-2">Seguridad Empresarial</h4>
-              <p className="text-sm text-blue-100">Protección de datos con estándares militares y cumplimiento internacional.</p>
-            </div>
-            <div className="text-center">
-              <div className="p-4 bg-white/10 rounded-xl w-fit mx-auto mb-4">
-                <Zap className="h-8 w-8" />
+              <div className="benefit-item">
+                <div className="benefit-icon">
+                  <Zap />
+                </div>
+                <h4 className="benefit-title">Rendimiento Óptimo</h4>
+                <p className="benefit-description">
+                  Arquitectura escalable que soporta millones de usuarios simultáneos.
+                </p>
               </div>
-              <h4 className="font-semibold mb-2">Rendimiento Óptimo</h4>
-              <p className="text-sm text-blue-100">Arquitectura escalable que soporta millones de usuarios simultáneos.</p>
-            </div>
-            <div className="text-center">
-              <div className="p-4 bg-white/10 rounded-xl w-fit mx-auto mb-4">
-                <Rocket className="h-8 w-8" />
+              <div className="benefit-item">
+                <div className="benefit-icon">
+                  <Rocket />
+                </div>
+                <h4 className="benefit-title">Innovación Continua</h4>
+                <p className="benefit-description">
+                  Actualizaciones constantes con las últimas tecnologías emergentes.
+                </p>
               </div>
-              <h4 className="font-semibold mb-2">Innovación Continua</h4>
-              <p className="text-sm text-blue-100">Actualizaciones constantes con las últimas tecnologías emergentes.</p>
             </div>
           </div>
         </div>

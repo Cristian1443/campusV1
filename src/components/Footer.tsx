@@ -1,117 +1,122 @@
+import React from 'react';
 import { GraduationCap, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, Youtube } from 'lucide-react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
+import './Footer.css';
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-background to-muted/50 border-t border-border/50">
+    <footer className="footer-main">
       {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+      <div className="newsletter-section">
+        <div className="newsletter-container">
+          <div className="newsletter-content">
+            <h3 className="newsletter-title">
               Mantente Conectado con el Futuro
             </h3>
-            <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="newsletter-description">
               Recibe las últimas noticias sobre innovación educativa, nuevas carreras y oportunidades exclusivas.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input 
+            <form className="newsletter-form">
+              <input 
                 type="email" 
                 placeholder="Tu email"
-                className="flex-1 bg-white/10 border-white/20 text-white placeholder:text-blue-100 focus:border-white/40"
+                className="newsletter-input"
+                required
               />
-              <Button className="bg-white text-blue-600 hover:bg-blue-50 border-0 font-semibold">
+              <button type="submit" className="newsletter-button">
                 Suscribirse
-              </Button>
-            </div>
+              </button>
+            </form>
           </div>
         </div>
       </div>
 
-      {/* Main Footer */}
-      <div className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Main Footer Content */}
+      <div className="footer-content">
+        <div className="footer-container">
+          <div className="footer-grid">
             {/* Brand Column */}
-            <div className="space-y-6">
-              <div className="flex items-center space-x-3">
-                <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg">
-                  <GraduationCap className="h-6 w-6 text-white" />
+            <div className="brand-column">
+              <div className="footer-logo">
+                <div className="footer-logo-icon">
+                  <GraduationCap />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    CampusVirtual
-                  </span>
-                  <span className="text-xs text-muted-foreground">Modelo Dual Alemán</span>
+                <div className="footer-logo-text">
+                  <h4 className="footer-logo-title">CampusVirtual</h4>
+                  <p className="footer-logo-subtitle">Modelo Dual Alemán</p>
                 </div>
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="footer-description">
                 Revolucionando la educación superior con tecnología de vanguardia y el prestigioso modelo dual alemán.
               </p>
-              <div className="flex space-x-3">
-                <Button size="sm" variant="outline" className="p-2 h-auto border-primary/20 hover:border-primary/40">
-                  <Facebook className="h-4 w-4" />
-                </Button>
-                <Button size="sm" variant="outline" className="p-2 h-auto border-primary/20 hover:border-primary/40">
-                  <Twitter className="h-4 w-4" />
-                </Button>
-                <Button size="sm" variant="outline" className="p-2 h-auto border-primary/20 hover:border-primary/40">
-                  <Instagram className="h-4 w-4" />
-                </Button>
-                <Button size="sm" variant="outline" className="p-2 h-auto border-primary/20 hover:border-primary/40">
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-                <Button size="sm" variant="outline" className="p-2 h-auto border-primary/20 hover:border-primary/40">
-                  <Youtube className="h-4 w-4" />
-                </Button>
+              <div className="footer-social">
+                <button className="social-button" aria-label="Facebook">
+                  <Facebook />
+                </button>
+                <button className="social-button" aria-label="Twitter">
+                  <Twitter />
+                </button>
+                <button className="social-button" aria-label="Instagram">
+                  <Instagram />
+                </button>
+                <button className="social-button" aria-label="LinkedIn">
+                  <Linkedin />
+                </button>
+                <button className="social-button" aria-label="YouTube">
+                  <Youtube />
+                </button>
               </div>
             </div>
 
-            {/* Academic Programs */}
-            <div>
-              <h4 className="font-semibold mb-6">Programas Académicos</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Ingeniería de Software</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Ingeniería Industrial</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Administración de Empresas</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Marketing Digital</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Postgrados</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Certificaciones</a></li>
+            {/* Academic Programs Column */}
+            <div className="links-column">
+              <h4 className="links-title">Programas Académicos</h4>
+              <ul className="links-list">
+                <li><a href="#" className="footer-link">Ingeniería de Software</a></li>
+                <li><a href="#" className="footer-link">Ingeniería Industrial</a></li>
+                <li><a href="#" className="footer-link">Administración de Empresas</a></li>
+                <li><a href="#" className="footer-link">Marketing Digital</a></li>
+                <li><a href="#" className="footer-link">Postgrados</a></li>
+                <li><a href="#" className="footer-link">Certificaciones</a></li>
               </ul>
             </div>
 
-            {/* Services */}
-            <div>
-              <h4 className="font-semibold mb-6">Servicios</h4>
-              <ul className="space-y-3">
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Portal Estudiante</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Admisiones</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Biblioteca Virtual</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Bolsa de Trabajo</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Soporte Técnico</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors duration-200 text-sm">Empresas Aliadas</a></li>
+            {/* Services Column */}
+            <div className="links-column">
+              <h4 className="links-title">Servicios</h4>
+              <ul className="links-list">
+                <li><a href="#" className="footer-link">Portal Estudiante</a></li>
+                <li><a href="#" className="footer-link">Admisiones</a></li>
+                <li><a href="#" className="footer-link">Biblioteca Virtual</a></li>
+                <li><a href="#" className="footer-link">Bolsa de Trabajo</a></li>
+                <li><a href="#" className="footer-link">Soporte Técnico</a></li>
+                <li><a href="#" className="footer-link">Empresas Aliadas</a></li>
               </ul>
             </div>
 
-            {/* Contact */}
-            <div>
-              <h4 className="font-semibold mb-6">Contacto</h4>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-4 w-4 mt-1 text-muted-foreground flex-shrink-0" />
-                  <div className="text-sm">
-                    <p className="text-muted-foreground">Av. Innovación 123</p>
-                    <p className="text-muted-foreground">Ciudad Tecnológica, CT 12345</p>
+            {/* Contact Column */}
+            <div className="links-column">
+              <h4 className="links-title">Contacto</h4>
+              <div className="contact-info">
+                <div className="contact-item">
+                  <div className="contact-icon">
+                    <MapPin />
+                  </div>
+                  <div className="contact-address">
+                    <span className="contact-text">Av. Innovación 123</span>
+                    <span className="contact-text">Ciudad Tecnológica, CT 12345</span>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">+1 (555) 123-4567</span>
+                <div className="contact-item">
+                  <div className="contact-icon">
+                    <Phone />
+                  </div>
+                  <span className="contact-text">+1 (555) 123-4567</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">info@campusvirtual.edu</span>
+                <div className="contact-item">
+                  <div className="contact-icon">
+                    <Mail />
+                  </div>
+                  <span className="contact-text">info@campusvirtual.edu</span>
                 </div>
               </div>
             </div>
@@ -120,22 +125,16 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border/50 py-6">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-muted-foreground">
+      <div className="footer-bottom">
+        <div className="footer-bottom-container">
+          <div className="footer-bottom-content">
+            <div className="footer-copyright">
               © 2025 CampusVirtual. Todos los derechos reservados.
             </div>
-            <div className="flex space-x-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Privacidad
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Términos
-              </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200">
-                Cookies
-              </a>
+            <div className="footer-bottom-links">
+              <a href="#" className="footer-bottom-link">Privacidad</a>
+              <a href="#" className="footer-bottom-link">Términos</a>
+              <a href="#" className="footer-bottom-link">Cookies</a>
             </div>
           </div>
         </div>
